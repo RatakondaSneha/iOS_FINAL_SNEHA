@@ -50,6 +50,18 @@ class PhotosViewController: UIViewController {
         }
     }
     
+    func updatePhotos(){
+        store.fetchAllPhotos{
+            (photosResult) -> Void in
+            switch photosResult {
+            case let .success(photosListArray):
+                self.photosListArray = photosListArray
+            case let .failure(error):
+                print("There is an error while fetching the images from database")
+            }
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
