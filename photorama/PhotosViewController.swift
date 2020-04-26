@@ -17,15 +17,16 @@ class PhotosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.updatePhotos()
+        
 
         store.fetchInterestingPhotos{
             (photosResult) -> Void in
             switch photosResult {
             case let .success(photos):
-                print("successfully found \(photos.count) photos")
-                if let firstPhoto = photos.first {
-                    self.updateImageView(for: firstPhoto)
-                }
+          
+                self.updatePhotos()
+                
             case let .failure(error):
                 print("Error fatching interesting photos: \(error)")
             }
