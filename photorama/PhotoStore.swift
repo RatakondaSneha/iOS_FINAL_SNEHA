@@ -37,7 +37,7 @@ class PhotoStore{
     }()
     
     let persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Photoama")
+        let container = NSPersistentContainer(name: "Photorama")
         container.loadPersistentStores { (description, error) in
             if let error = error {
                 print("Error setting up Core Data (\(error)).")
