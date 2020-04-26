@@ -26,8 +26,9 @@ class PhotosViewController: UIViewController {
             case let .success(photos):
           
                 self.updatePhotos()
-                
-            case let .failure(error):
+                if let indexPhoto = self.imagesArray.first {
+                    self.updateImageView(for: indexPhoto)
+                }            case let .failure(error):
                 print("Error fatching interesting photos: \(error)")
             }
         }
