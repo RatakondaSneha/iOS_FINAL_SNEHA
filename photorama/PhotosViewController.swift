@@ -39,6 +39,9 @@ class PhotosViewController: UIViewController {
     @IBAction func nextPhoto(_ sender: UITapGestureRecognizer) {
         
         index += 1
+        if(index == imagesArray.count){
+            index = 0
+        }
         self.updateImageView(for: imagesArray[index])
     }
     
